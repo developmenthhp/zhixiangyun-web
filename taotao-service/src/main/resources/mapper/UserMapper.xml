@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.zhixiangyun.resource.user.UserMapper">
+
+	<select id="getUsers" resultMap="userResult">
+		select id, user_name, password, name, age, sex, birthday, created, updated from tb_user
+	</select>
+
+	<!--配置一个resultMap 指定返回的类型 -->
+	<resultMap id="userResult" type="cn.zhixiangyun.api.model.user.User">
+		<id column="id" property="id" />
+		<result column="user_name" property="userName" />
+		<result column="password" property="password" />
+		<result column="name" property="name" />
+		<result column="age" property="age" />
+		<result column="sex" property="sex" />
+		<result column="birthday" property="birthday" />
+		<result column="created" property="created" />
+		<result column="updated" property="updated" />
+	</resultMap>
+
+</mapper>
