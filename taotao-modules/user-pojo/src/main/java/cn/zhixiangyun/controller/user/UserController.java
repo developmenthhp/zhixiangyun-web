@@ -44,6 +44,7 @@ public class UserController {
     @PostMapping("/getUserList")
     public String getUserlist(@RequestParam(defaultValue = "1") int page,
                            @RequestParam(defaultValue = "10") int rows) {
+
         return userService.getUserList(page, rows);
     }
 
